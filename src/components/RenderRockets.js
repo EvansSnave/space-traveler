@@ -30,7 +30,7 @@ const RenderRockets = () => {
     dispatch(getRocketsFromAPI());
   }, [dispatch]);
   return (
-    <div>
+    <ul>
       {rocketsArr.map((rocket) => (
         <CreateRocketsUI
           key={rocket.id}
@@ -40,7 +40,7 @@ const RenderRockets = () => {
           image={rocket.flickr_images}
         />
       ))}
-    </div>
+    </ul>
   );
 };
 
