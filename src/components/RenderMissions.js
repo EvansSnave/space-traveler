@@ -1,9 +1,7 @@
-const RenderMissions = () => {
-  return (
-    <div>
-      <p>Missions section</p>
-    </div>
-  );
-}
+const RenderMissions = () => (
+  <div>
+    <p>Missions section</p>
+  </div>
+);
 
 export default RenderMissions;
