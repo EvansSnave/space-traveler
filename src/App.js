@@ -1,32 +1,24 @@
-import { Routes, Route, Link } from 'react-router-dom';
-import RenderRockets from './components/RenderRockets';
-import RenderMissions from './components/RenderMissions';
-import ProfilePage from './components/ProfilePage';
-import planet from './assets/planet.png';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import './styles/App.css';
+import NavBar from './components/navigation';
+import Missions from './pages/missions';
+import MyProfile from './pages/myProfile';
+import Rockets from './pages/rockets';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Dragons from './pages/dragons';
 
 function App() {
   return (
-    <div className="App">
-      <nav>
-        <div>
-          <img src={planet} alt="planet icon" />
-          <h1>
-            Space Travelers&apos; Hub
-          </h1>
-        </div>
-        <ul>
-          <li><Link to="/">Rockets</Link></li>
-          <li><Link to="/missions">Missions</Link></li>
-          <li><Link to="/myprofile">| My profile</Link></li>
-        </ul>
-      </nav>
-
+    <Router basename="/Space-Travelers-Hub">
+      <NavBar />
       <Routes>
-        <Route path="/" element={<RenderRockets />} />
-        <Route path="/missions" element={<RenderMissions />} />
-        <Route path="/myprofile" element={<ProfilePage />} />
+        <Route path="/" element={<Rockets />} />
+        <Route path="/missions" element={<Missions />} />
+        <Route path="/myprofile" element={<MyProfile />} />
+        <Route path="/dragons" element={<Dragons />} />
       </Routes>
-    </div>
+    </Router>
   );
 }
 

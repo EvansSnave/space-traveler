@@ -1,0 +1,16 @@
+.rocket-image {
+  object-fit: cover;
+}
+
+.card-container {
+  margin-left: 5%;
+  width: 100%;
+}
+
+.rocket-content {
+  padding: 0;
+}
+
+.rocket-title {
+  font-size: 23px;
+}

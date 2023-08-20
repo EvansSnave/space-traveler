@@ -1,0 +1,27 @@
+.dragon-card {
+  border: none;
+  margin-bottom: 15px;
+}
+
+.dragon-image {
+  border-radius: 0;
+  object-fit: cover;
+}
+
+.dragon-content {
+  padding: 0;
+}
+
+.card-container {
+  margin-left: 5%;
+  width: 100%;
+  padding: 15px;
+}
+
+.dragon-title {
+  font-size: 23px;
+}
+
+.row {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}

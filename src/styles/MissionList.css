@@ -1,0 +1,20 @@
+.mission-list {
+  margin: 0 50px;
+}
+
+.mission-name {
+  font-weight: bold;
+}
+
+.mission-description {
+  padding-bottom: 30px;
+}
+
+.mission-status {
+  margin-top: 41%;
+}
+
+.join-button {
+  margin-top: 25%;
+  width: 160px;
+}
