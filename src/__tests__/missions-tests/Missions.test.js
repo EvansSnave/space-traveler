@@ -6,12 +6,10 @@ import {
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import axios from 'axios';
-import Missions from '../../pages/missions'; // Make sure this path is correct
+import Missions from '../../pages/missions';
 import missionsReducer from '../../redux/missions/missionsSlice';
 
 jest.mock('axios');
-
-// Mock data for testing
 const mockMissions = [
   {
     mission_id: '1',

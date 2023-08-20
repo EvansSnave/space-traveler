@@ -13,13 +13,15 @@ export const fetchRockets = createAsyncThunk('rockets/fetchRockets', async () =>
   }));
 });
 
+export const cancelReserveRocket = createAsyncThunk('rockets/cancelReserveRocket', async (rocketId) => rocketId);
+
 export const setSelectedRocket = createAsyncThunk('rockets/setSelectedRocket', async (rocketData) => rocketData);
 
-export const cancelReserveRocket = createAsyncThunk('rockets/cancelReserveRocket', async (rocketId) => rocketId);
+const initialState = [];
 
 export const rocketsSlice = createSlice({
   name: 'rockets',
-  initialState: [],
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchRockets.fulfilled, (state, action) => action.payload);

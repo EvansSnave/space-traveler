@@ -18,26 +18,26 @@ export const missionsSlice = createSlice({
   name: 'missions',
   initialState: { missions: [], loading: false },
   reducers: {
-    reserveMission: (state, action) => {
-      const mission = state.missions.find((mission) => mission.mission_id === action.payload);
-      if (mission) {
-        mission.reserved = true;
-      }
-    },
     leaveMission: (state, action) => {
       const mission = state.missions.find((mission) => mission.mission_id === action.payload);
       if (mission) {
         mission.reserved = false;
       }
     },
+    reserveMission: (state, action) => {
+      const mission = state.missions.find((mission) => mission.mission_id === action.payload);
+      if (mission) {
+        mission.reserved = true;
+      }
+    },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchMissions.pending, (state) => {
-      state.loading = true;
-    });
     builder.addCase(fetchMissions.fulfilled, (state, action) => {
       state.missions = action.payload;
       state.loading = false;
+    });
+    builder.addCase(fetchMissions.pending, (state) => {
+      state.loading = true;
     });
   },
 });

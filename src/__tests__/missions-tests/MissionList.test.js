@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import store from '../../redux/store';
 import MissionList from '../../components/MissionList';
 
-// Mock data for testing
 const mockMissions = [
   {
     mission_id: '1',
@@ -29,12 +28,9 @@ describe('MissionList', () => {
       </Provider>,
     );
 
-    // Check that the MissionList component is rendered with correct data
     mockMissions.forEach((mission) => {
       expect(screen.getByText(mission.mission_name)).toBeInTheDocument();
       expect(screen.getByText(mission.description)).toBeInTheDocument();
     });
   });
-
-  // Add more tests as needed...
 });

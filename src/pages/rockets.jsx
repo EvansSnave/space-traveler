@@ -10,11 +10,11 @@ import '../styles/rockets.css';
 
 const Rocket = ({ rocket }) => {
   const dispatch = useDispatch();
-  const handleReserveRocket = () => {
-    dispatch(setSelectedRocket(rocket));
-  };
   const handleCancelReserveRocket = () => {
     dispatch(cancelReserveRocket(rocket.rocket_id));
+  };
+  const handleReserveRocket = () => {
+    dispatch(setSelectedRocket(rocket));
   };
   return (
     <Card className="rocket-card" style={{ border: 'none' }}>
@@ -70,8 +70,8 @@ Rocket.propTypes = {
 };
 
 function Rockets() {
-  const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
+  const dispatch = useDispatch();
   useEffect(() => {
     if (rockets.length === 0) {
       dispatch(fetchRockets());

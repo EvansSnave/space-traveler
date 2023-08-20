@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import axios from 'axios';
 import missionsReducer, { reserveMission, leaveMission, fetchMissions } from '../../redux/missions/missionsSlice';
 
-// Mock data for testing
 const mockMissions = [
   {
     mission_id: '1',
@@ -19,10 +18,8 @@ const mockMissions = [
 ];
 
 jest.mock('axios');
-
 describe('missions reducer', () => {
   let store;
-
   beforeEach(() => {
     store = configureStore({
       reducer: {
@@ -43,21 +40,18 @@ describe('missions reducer', () => {
     expect(actual.loading).toBe(false);
   });
 
-  // Test reserveMission action
   test('should handle reserveMission', () => {
     store.dispatch(reserveMission('1'));
     const actual = store.getState().missions;
     expect(actual.missions[0].reserved).toBe(true);
   });
 
-  // Test leaveMission action
   test('should handle leaveMission', () => {
     store.dispatch(leaveMission('1'));
     const actual = store.getState().missions;
     expect(actual.missions[0].reserved).toBe(false);
   });
 
-  // Test fetchMissions action
   test('should handle fetchMissions', async () => {
     axios.get.mockResolvedValueOnce({ data: mockMissions });
     await store.dispatch(fetchMissions());

@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 import Table from 'react-bootstrap/Table';
 
 const MyProfile = () => {
-  const missions = useSelector((state) => state.missions.missions);
   const rockets = useSelector((state) => state.rockets);
-  const joinedMissions = missions.filter((mission) => mission.reserved);
+  const missions = useSelector((state) => state.missions.missions);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
+  const joinedMissions = missions.filter((mission) => mission.reserved);
 
   return (
     <div style={{
