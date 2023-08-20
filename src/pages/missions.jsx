@@ -11,6 +11,7 @@ const Missions = () => {
       dispatch(fetchMissions());
     }
   }, [dispatch, missions, isLoading]);
+
   return (
     <div>
       {!isLoading && <MissionList missions={missions} />}
