@@ -10,15 +10,12 @@ import '../styles/rockets.css';
 
 const Rocket = ({ rocket }) => {
   const dispatch = useDispatch();
-
   const handleReserveRocket = () => {
     dispatch(setSelectedRocket(rocket));
   };
-
   const handleCancelReserveRocket = () => {
     dispatch(cancelReserveRocket(rocket.rocket_id));
   };
-
   return (
     <Card className="rocket-card" style={{ border: 'none' }}>
       <Container className="card-container">
@@ -75,13 +72,11 @@ Rocket.propTypes = {
 function Rockets() {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
-
   useEffect(() => {
     if (rockets.length === 0) {
       dispatch(fetchRockets());
     }
   }, [dispatch, rockets]);
-
   return (
     <div>
       {rockets.map((rocket) => (
