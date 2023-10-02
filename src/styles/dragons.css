@@ -1,0 +1,16 @@
+.dragon-image {
+  object-fit: cover;
+}
+
+.card-container {
+  margin-left: 5%;
+  width: 100%;
+}
+
+.dragon-content {
+  padding: 0;
+}
+
+.dragon-title {
+  font-size: 23px;
+}

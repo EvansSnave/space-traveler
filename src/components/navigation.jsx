@@ -15,6 +15,9 @@ function NavBar() {
             <NavLink to="/space-traveler" className="navlink300" activeclassname="active-link">Rockets</NavLink>
           </li>
           <li>
+            <NavLink to="/dragons" className="navlink300" activeclassname="active-link">Dragons</NavLink>
+          </li>
+          <li>
             <NavLink to="/missions" className="navlink300" activeclassname="active-link">Missions</NavLink>
           </li>
           <li>

@@ -5,15 +5,22 @@ import Table from 'react-bootstrap/Table';
 const MyProfile = () => {
   const rockets = useSelector((state) => state.rockets);
   const missions = useSelector((state) => state.missions.missions);
+  const dragons = useSelector((state) => state.dragons);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
+  const reservedDragons = dragons.filter((dragon) => dragon.reserved);
   const joinedMissions = missions.filter((mission) => mission.reserved);
 
   return (
-    <div style={{
-      width: '90%', margin: '0 5% 0 5%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap',
-    }}
+    <div
+      style={{
+        width: '90%',
+        margin: '0 5% 0 5%',
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+      }}
     >
-      <div style={{ width: '45%', marginTop: '20px' }}>
+      <div style={{ width: '30%', marginTop: '20px' }}>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -29,7 +36,7 @@ const MyProfile = () => {
           </tbody>
         </Table>
       </div>
-      <div style={{ width: '45%', marginLeft: '5%', marginTop: '20px' }}>
+      <div style={{ width: '30%', marginLeft: '5%', marginTop: '20px' }}>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -40,6 +47,22 @@ const MyProfile = () => {
             {reservedRockets.map((rocket) => (
               <tr key={rocket.rocket_id}>
                 <td>{rocket.rocket_name}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
+      <div style={{ width: '30%', marginLeft: '5%', marginTop: '20px' }}>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>My Dragon</th>
+            </tr>
+          </thead>
+          <tbody>
+            {reservedDragons.map((dragon) => (
+              <tr key={dragon.dragon_id}>
+                <td>{dragon.dragon_name}</td>
               </tr>
             ))}
           </tbody>
