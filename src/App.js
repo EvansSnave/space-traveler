@@ -9,10 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <Router basename="/Space-Travelers-Hub">
+    <Router basename="/EvansSnave">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Rockets />} />
+        <Route path="/space-traveler" element={<Rockets />} />
         <Route path="/missions" element={<Missions />} />
         <Route path="/myprofile" element={<MyProfile />} />
       </Routes>
