@@ -14,13 +14,13 @@ const MyProfile = () => {
     <div
       style={{
         width: '90%',
-        margin: '0 5% 0 5%',
+        margin: '0 5% 0 4%',
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
       }}
     >
-      <div style={{ width: '30%', marginTop: '20px' }}>
+      <div style={{ width: '31%', marginTop: '20px' }}>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -36,7 +36,7 @@ const MyProfile = () => {
           </tbody>
         </Table>
       </div>
-      <div style={{ width: '30%', marginLeft: '5%', marginTop: '20px' }}>
+      <div style={{ width: '31%', marginLeft: '5%', marginTop: '20px' }}>
         <Table striped bordered hover>
           <thead>
             <tr>
